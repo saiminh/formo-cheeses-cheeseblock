@@ -6,7 +6,7 @@
 	"title": "Formo Cheesepage Cheeseblock",
 	"category": "widgets",
 	"icon": "smiley",
-	"description": "Displays a product on the cheeses page.",
+	"description": "Displays a product on the cheeses page. Or does it?",
 	"example": {},
 	"supports": {
 		"html": false

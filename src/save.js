@@ -11,7 +11,9 @@ export default function save({ attributes }) {
             value={attributes.title} 
             className='formo-cheeses-cheeseblock-title has-xxxx-large-font-size' 
           />
-          <div className='formo-cheeses-cheeseblock-content'>
+          <div { ...useBlockProps.save({
+            className: 'formo-cheeses-cheeseblock-content'
+          }) }>
             <InnerBlocks.Content />
           </div>
         </div>

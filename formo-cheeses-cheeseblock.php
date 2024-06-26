@@ -32,7 +32,7 @@ add_action( 'init', 'create_block_formo_cheeses_cheeseblock_init' );
 function render_cheeseblock_image_with_srcset( $block_content, $block ) {
   if ( $block['blockName'] === 'create-block/formo-cheeses-cheeseblock' ) {
       $doc = new DOMDocument();
-      @$doc->loadHTML( $block_content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
+      @$doc->loadHTML('<?xml encoding="utf-8" ?>' . $block_content, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
       $images = $doc->getElementsByTagName( 'img' );
       foreach ( $images as $image ) {
           $id = $image->getAttribute( 'data-id' );
