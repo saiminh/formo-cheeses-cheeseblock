@@ -1,46 +1,42 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "create-block/formo-slider-slide-cheese",
+	"name": "create-block/formo-cheeses-cheeseblock",
 	"version": "0.1.0",
-	"title": "Formo Slider Slide Cheese",
+	"title": "Formo Cheesepage Cheeseblock",
 	"category": "widgets",
 	"icon": "smiley",
-	"description": "Example block scaffolded with Create Block tool.",
+	"description": "Displays a product on the cheeses page.",
 	"example": {},
 	"supports": {
 		"html": false
 	},
   "attributes": {
-    "contentHead": {
+    "title": {
       "type": "string",
-      "default": "Cheesename",
       "source": "html",
       "selector": "h2"
     },
-    "contentSubHead": {
+    "layout": {
       "type": "string",
-      "default": "Cheese Subhead",
-      "source": "html",
-      "selector": "h3"
+      "default": "text_left"
     },
-    "content": {
+    "imageID": {
       "type": "string",
-      "default": "Cheesedescription",
-      "source": "html",
-      "selector": "p"
+      "default": "",
+      "source": "attribute",
+      "selector": "img",
+      "attribute": "data-id"
     },
-    "buttonText": {
+    "imageUrl": {
       "type": "string",
-      "default": "More info",
-      "source": "html",
-      "selector": "a"
-    },
-    "buttonLink": {
-      "type": "string"
+      "default": "",
+      "source": "attribute",
+      "selector": ".formo-cheeses-cheeseblock--bg-image img",
+      "attribute": "src"
     }
   },
-	"textdomain": "formo-slider-slide-cheese",
+	"textdomain": "formo-cheeses-cheeseblock",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css"

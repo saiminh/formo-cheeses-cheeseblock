@@ -1,1 +1,99 @@
-.formo-slider-slide-cheese,.formo-slider-slide-cheese .wp-block-columns{margin-bottom:0;position:relative}.formo-slider-slide-cheese>.wp-block-columns>.wp-block-column{padding-bottom:3em;padding-top:3em}.formo-slider-slide-cheese>.wp-block-columns>.wp-block-column .offset1.span8{padding:0}.content-column{align-items:flex-start;align-self:stretch;display:flex;flex-direction:column;justify-content:flex-end;padding:0 1em}.content-column>*{opacity:0;position:relative;transform:translateY(-20px);transition:all .5s ease-in-out;z-index:2}.content-column>.overflow-width{transform:translateY(20px)}.active .content-column>*{opacity:1;transform:translateY(0)}.formo-slider-slide-cheese figure{margin-bottom:0}.formo-slider-slide-cheese-head{position:relative;z-index:2}.formo-slider-slide-cheese-subhead{line-height:1}.formo-slider-slide-cheese-p{padding-bottom:3em}.cheese-image figure{aspect-ratio:1.7777777778;border-radius:1.2em;overflow:hidden;position:relative;transform:scale(1.2);transition:all .5s cubic-bezier(.71,.21,.15,1)}.cheese-image figure img{filter:brightness(.75);height:100%;-o-object-fit:cover;object-fit:cover;opacity:0;position:relative;transform:scale(1.2);transition:all .75s cubic-bezier(.71,.21,.15,1);width:100%}.active .cheese-image figure{transform:scale(1)}.active .cheese-image figure img{opacity:1;transform:scale(1)}.overflow-width{min-width:90vw}@media(max-width:782px){.formo-slider-slide-cheese>.wp-block-columns{flex-direction:column-reverse}.formo-slider-slide-cheese>.wp-block-columns>.wp-block-column{flex:0 0 auto;padding:0}.formo-slider-slide-cheese-head{margin-bottom:.5em;margin-right:var(--wp--custom--spacing--outer);margin-top:calc(-.75em - var(--wp--custom--spacing--outer))}.formo-slider-slide-cheese-p{padding-bottom:0}.overflow-width{min-width:0}}
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+@media (max-width: 781.98px) {
+  .formo-cheeses-cheeseblock-cols {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+  .formo-cheeses-cheeseblock-col {
+    flex: 0 0 50%;
+    position: relative;
+    padding: var(--wp--custom--spacing--outer);
+  }
+  .formo-cheeses-cheeseblock-images {
+    display: grid;
+    padding: 0;
+  }
+  .formo-cheeses-cheeseblock--image {
+    width: 100%;
+    display: block;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    margin: 0;
+  }
+  .formo-cheeses-cheeseblock--image img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  h2.formo-cheeses-cheeseblock-title {
+    position: relative;
+    z-index: 2;
+    color: var(--wp--preset--color--formo-blue);
+    margin-top: 0.25em !important;
+  }
+  .formo-cheeses-cheeseblock-content ul {
+    padding: 0 1.5em 0 0 !important;
+    margin: 0;
+  }
+  .formo-cheeses-cheeseblock-content ul li {
+    margin: 0 !important;
+  }
+}
+@media (min-width: 782px) {
+  .formo-cheeses-cheeseblock-cols {
+    display: flex;
+    gap: 0;
+  }
+  .formo-cheeses-cheeseblock-cols.text_right {
+    flex-direction: row-reverse;
+  }
+  .formo-cheeses-cheeseblock-col {
+    flex: 0 0 50%;
+    max-width: 50%;
+    position: relative;
+    padding: var(--wp--custom--spacing--outer);
+    overflow: visible;
+  }
+  .formo-cheeses-cheeseblock-images {
+    display: grid;
+    padding: 0;
+  }
+  .formo-cheeses-cheeseblock--image {
+    width: 100%;
+    display: block;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    margin: 0;
+  }
+  .formo-cheeses-cheeseblock--image img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  h2.formo-cheeses-cheeseblock-title {
+    position: relative;
+    z-index: 2;
+    color: var(--wp--preset--color--formo-blue);
+    width: 200%;
+    margin-top: 0.25em !important;
+  }
+  .text_right h2.formo-cheeses-cheeseblock-title {
+    transform: translateX(50%);
+    text-align: left;
+  }
+  .formo-cheeses-cheeseblock-content {
+    max-width: 28rem;
+  }
+  .formo-cheeses-cheeseblock-content ul {
+    padding: 0 1.5em 0 0 !important;
+    margin: 0;
+  }
+  .formo-cheeses-cheeseblock-content ul li {
+    margin: 0 !important;
+  }
+}

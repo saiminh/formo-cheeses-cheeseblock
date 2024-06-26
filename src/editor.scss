@@ -1,61 +1,16 @@
-.formo-slider-slide-cheese-button {
-  position: relative;
-  
-  & .url {
-    position: absolute;
-    bottom: 100%;
-    transform: translateY(50%);
-  }
+.formo-cheeses-cheeseblock-images .button-container {
+  position: absolute ;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
-// .components-base-control__field {
-//   margin-bottom: 0!important;
-
-//   & .components-text-control__input[type="text"] {
-//     padding: 0;
-//     background-color: transparent;
-//     border: none;
-//     border-radius: 0;
-//     overflow: visible;
-//     width: auto;
-//     font-size: 1em;
-//     height: 1em;
-//   }
-// }
-.cheese-image {
-  & img {
-    border-radius: 1.2em;
-  }
-  & .components-placeholder {
-    position: relative;
-  }
-  & .components-placeholder.has-illustration {
-    background-color: #FFFFFF33;
-  }
-  & .components-placeholder:after {
-    position: absolute;
-    content: 'Add an image:';
-    z-index: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: var(--wp-components-placeholder-font-size);
-  }
-  & .is-selected .components-placeholder:after {
-    display: none;
-  }
-}
-// override the frontend styles to make everything editable:
-.content-column > * {
-  opacity: 1;
-  transform: translateY(0);
-}
-.cheese-image {
-  & figure  {
-    transform: scale(1);
-  }
-  & figure img {
-    filter: brightness(.75);
-    transform: scale(1);
-    opacity: 1;
-  }
+.layout-switcher {
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  background-color: var(--wp--preset--color--formo-blue);
+  color: white;
 }

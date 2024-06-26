@@ -1,77 +1,68 @@
 import { __ } from '@wordpress/i18n';
-import { useBlockProps, RichText, InnerBlocks, URLInputButton } from '@wordpress/block-editor';
+import { useBlockProps, RichText, InnerBlocks, MediaUpload } from '@wordpress/block-editor';
+import { Button } from '@wordpress/components';
+import { useState } from '@wordpress/element';
 import './editor.scss';
 
 export default function Edit( {attributes, setAttributes} ) {
 
+  const getImageButton = (openEvent) => {
+    return (
+      <div className="button-container">
+        <Button 
+          onClick={ openEvent }
+          className="button button-large"
+        >
+          Pick a background image
+        </Button>
+      </div>
+    );
+  };
+
+  const [layout, setLayout] = useState(attributes.layout);
+
+  const toggleLayout = () => {
+    const newLayout = layout === 'text_left' ? 'text_right' : 'text_left';
+    setLayout(newLayout);
+    setAttributes({ layout: newLayout }); // Persist the change to attributes
+  }
+
 	return (
 		<div { ...useBlockProps(
-      {className: 'formo-slider-slide-cheese formo-slider-slide'}
-    ) }>
-      <div className='wp-block-columns has-formo-cream-color has-text-color has-link-color'>
-        <div className="wp-block-column span3 gridline content-column">
-          <div className="overflow-width">
-            <RichText
-              tagName='h2'
-              className='has-formo-yellow-color has-text-color has-link-color has-xxxx-large-font-size formo-slider-slide-cheese-head'
-              value={attributes.contentHead}
-              onChange={(value) => {
-                setAttributes({ contentHead: value });
-              }}
-              placeholder={__('Add a title', 'formo-slider-slide-cheese')}
-            />
-          </div>
+      {className: 'formo-cheeses-cheeseblock'}
+    )}>
+      <div className={`formo-cheeses-cheeseblock-cols ${layout}`}>
+        <div className='formo-cheeses-cheeseblock-col'>
           <RichText
-            tagName='h3'
-            className='has-formo-yellow-color has-text-color has-link-color has-roobert-font-family has-large-font-size formo-slider-slide-cheese-subhead'
-            value={attributes.contentSubHead}
-            onChange={(value) => {
-              setAttributes({ contentSubHead: value });
-            }}
-            placeholder={__('Add a subtitle', 'formo-slider-slide-cheese')}
+            tagName="h2"
+            className='formo-cheeses-cheeseblock-title has-xxxx-large-font-size'
+            value={attributes.title}
+            onChange={(title) => setAttributes({title})}
+            placeholder='Cheese name'
           />
-          <RichText
-            tagName='p'
-            className='has-formo-cream-color has-text-color has-link-color'
-            value={attributes.content}
-            onChange={(value) => {
-              setAttributes({ content: value });
-            }}
-            placeholder={__('Add a description', 'formo-slider-slide-cheese')}
-          />
-          <div className='formo-slider-slide-cheese-button'>
-            <RichText
-              tagName='a'
-              className='wp-block-button__link has-formo-blue-color has-formo-cream-background-color has-text-color has-background has-link-color wp-element-button'
-              value={attributes.buttonText}
-              onChange={(value) => {
-                setAttributes({ buttonText: value });
-              }}
-              placeholder={__('Add a button text', 'formo-slider-slide-cheese')}
-              disableLineBreaks={true}
-              allowedFormats={ [ 'core/bold', 'core/italic' ] }
-            />
-            <div className='url'>
-              <URLInputButton
-                url={attributes.buttonLink}
-                onChange={(url) => {
-                  setAttributes({ buttonLink: url });
-                }}
-              />
-            </div>
+          <div className='formo-cheeses-cheeseblock-content'>
+            <InnerBlocks />
           </div>
         </div>
-        <div className="wp-block-column span6 gridline cheese-image">
-          <div className='offset1 span8'>
-            <InnerBlocks 
-              allowedBlocks={['core/image']}
-              template={[['core/image']]}
-              templateLock='insert'
-            />
-          </div>
+        <div className='formo-cheeses-cheeseblock-col formo-cheeses-cheeseblock-images'>
+          <MediaUpload
+              onSelect={ media => { setAttributes({ imageID: media.id, imageUrl: media.url }); } }
+              type="image"
+              value={ attributes.imageID } // make sure to set this from props
+              render={ ({ open }) => getImageButton(open) }
+          />
+          <figure className='formo-cheeses-cheeseblock--image formo-cheeses-cheeseblock--bg-image'>
+            { attributes.imageID && <img src={ attributes.imageUrl } className="image" data-id={ attributes.imageID } />}
+          </figure>
         </div>
-        <div className="wp-block-column span3"></div>
       </div>
+      <Button
+        className='layout-switcher'
+        onClick={ toggleLayout }
+        value='Switch layout'
+      >
+        Switch Layout
+      </Button>
 		</div>
 	);
 }
