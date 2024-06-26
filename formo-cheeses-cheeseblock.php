@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Formo Cheesepage Cheese Block
- * Description:       Displays stuff
+ * Description:       Displays a cheese on the Cheese page
  * Requires at least: 6.1
  * Requires PHP:      7.0
  * Version:           0.1.0
